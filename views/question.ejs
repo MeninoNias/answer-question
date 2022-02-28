@@ -7,11 +7,11 @@
                 <h3>Realizar pergunta</h1>
             </div>
             <div class="card-body">
-                <form method="POST">
+                <form method="POST" action="/question">
                     <label>Titulo</label>
-                    <input type="text" class="form-control mb-3" placeholder="Titulo">
+                    <input type="text" name="title" class="form-control mb-3" placeholder="Titulo">
                     <label>Descrição</label>
-                    <textarea name="" id="" cols="30" rows="5" class="form-control mb-3" placeholder="Escreva sua pergunta"></textarea>
+                    <textarea name="description" id="" cols="30" rows="5" class="form-control mb-3" placeholder="Escreva sua pergunta"></textarea>
                     <button type="submit" class="btn btn-success w-100">Perguntar</button>
                 </form>               
             </div>
