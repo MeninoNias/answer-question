@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const connection = require("./database/database");
+const Question = require("./database/Question")
 
 connection.
     authenticate()
@@ -22,8 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res){
-    res.render('index');
+app.get('/', (req, res) => {
+    Question.findAll({raw: true})
+        .then(questions => {
+            res.render('index', {questions: questions});
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
 });
 
 app.get('/question', (req, res) => {
@@ -34,7 +42,9 @@ app.post('/question', (req, res) => {
     var title = req.body.title;
     var description = req.body.description;
 
-    res.send(`${title}, ${description}`);
+    Question.create({title: title, description: description}).then(() => {
+        res.redirect('/');
+    });
 });
 
 app.listen(8000, () => {
