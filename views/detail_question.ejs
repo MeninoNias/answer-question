@@ -1,6 +1,11 @@
 <%- include ('./components/header.ejs') %>
 <body>
-    <%- include ('./components/navbar.ejs') %> 
-    <h1>DETAIL</h1>
+    <%- include ('./components/navbar.ejs') %>
+    <div class="container">
+        <hr>
+        <h1><%= question.title %></h1>
+        <p><%= question.description %></p>
+        <hr>
+    </div>
 </body>
-<%- include ('./components/scripts.ejs') %>
+<% include ('./components/scripts.ejs') %> 
