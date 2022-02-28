@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Question</title>    
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     
 </head>
 <body>
     <div class="container">
-        <h3>Realizar pergunta</h1>
-        <hr> 
-        <label>Titulo</label>
-        <input type="text" class="form-control mb-3" placeholder="Titulo">
-        <label>Descrição</label>
-        <textarea name="" id="" cols="30" rows="5" class="form-control mb-3" placeholder="Escreva sua pergunta"></textarea>
-        <button type="submit" class="btn btn-success w-100">Perguntar</button>
+        <div class="card">
+            <div class="card-header">
+                <h3>Realizar pergunta</h1>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <label>Titulo</label>
+                    <input type="text" class="form-control mb-3" placeholder="Titulo">
+                    <label>Descrição</label>
+                    <textarea name="" id="" cols="30" rows="5" class="form-control mb-3" placeholder="Escreva sua pergunta"></textarea>
+                    <button type="submit" class="btn btn-success w-100">Perguntar</button>
+                </form>               
+            </div>
+        </div>
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
