@@ -1,0 +1,19 @@
+{
+  "name": "anwer-question",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeninoNias/answer-question.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeninoNias/answer-question/issues"
+  },
+  "homepage": "https://github.com/MeninoNias/answer-question#readme"
+}
