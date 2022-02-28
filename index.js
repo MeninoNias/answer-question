@@ -24,7 +24,9 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-    Question.findAll({raw: true})
+    Question.findAll({raw: true, order:[
+        ['createdAt', 'DESC']
+    ]})
         .then(questions => {
             res.render('index', {questions: questions});
         })
@@ -35,7 +37,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/question', (req, res) => {
-    res.render('question');
+    res.render('create_question');
+});
+
+app.get('/question/:id', (req, res) => {
+    var id = req.params.id;
+    Question.findOne({
+        where: {id: id}
+    }).then(question => {
+        if (question != undefined){
+            res.render('detail_question');
+        }
+        else{
+            res.redirect('/');
+        }
+    });
 });
 
 app.post('/question', (req, res) => {
