@@ -2,6 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+const connection = require("./database/database");
+
+connection.
+    authenticate()
+    .then(()=>{
+        console.log("Connection Sucess");
+    })
+    .catch(()=>{
+        console.log("Connection Failure")
+    });
+
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:false}));
