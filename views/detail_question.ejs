@@ -3,9 +3,27 @@
     <%- include ('./components/navbar.ejs') %>
     <div class="container">
         <hr>
-        <h1><%= question.title %></h1>
+        <h2><%= question.title %></h2>
         <p><%= question.description %></p>
         <hr>
+        <form method="post" action="/answer">
+            <h4>Responda</h4>
+            <label>Resposta: </label>
+            <textarea name="data_text" cols="30" rows="5" placeholder="Digite sua resposta" class="form-control mb-3"></textarea>
+            <input type="hidden" name="question" value="<%= question.id %>">
+            <button type="submit" class="btn btn-success w-100">Confirmar</button>
+        </form>
+
+        <% if (answers.length > 0) { %>
+            <h5 class="mt-3">Respostas</h5>
+            <% answers.forEach(element => { %>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6><%= element.description %></h6>
+                    </div>
+                </div>         
+            <% }) %>
+        <% } %>
     </div>
 </body>
 <% include ('./components/scripts.ejs') %> 
